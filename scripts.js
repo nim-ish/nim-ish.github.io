@@ -31,16 +31,22 @@ window.addEventListener('scroll', () => {
   addFadeInClass([aboutMeSection, projectsSection, extracurricularsSection]);
 });
 
-// Scroll to top button
-const scrollBtn = document.getElementById("scroll-to-top");
+// Scroll to top button visibility logic
+const scrollToTopButton = document.getElementById("scroll-to-top");
 
-window.onscroll = function () {
+window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollBtn.style.display = "block";
+    scrollToTopButton.style.display = "block";
   } else {
-    scrollBtn.style.display = "none";
+    scrollToTopButton.style.display = "none";
   }
-};
+});
+
+// Scroll to top functionality
+scrollToTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 
 scrollBtn.addEventListener("click", () => {
   // Scroll to top smoothly
@@ -53,4 +59,18 @@ const parallaxBg = document.querySelector('.parallax-bg');
 window.addEventListener('scroll', () => {
   let offset = window.pageYOffset;
   parallaxBg.style.backgroundPositionY = offset * 0.7 + 'px';
+});
+
+// JavaScript to add 'animate-on-scroll' class to elements in viewport
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-on-scroll');
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+document.querySelectorAll('.animate-on-scroll').forEach(element => {
+  observer.observe(element);
 });

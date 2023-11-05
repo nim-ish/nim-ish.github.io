@@ -339,32 +339,44 @@ img:hover {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1170px) {
   .top-bar .menu-btn {
     display: block;
   }
+  
   .top-bar .main-nav {
     display: none;
   }
-  .top-bar .menu-btn.open {
-    transform: rotate(90deg);
-  }
+
   .top-bar .main-nav.open {
     display: block;
   }
-  .top-bar .main-nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .top-bar .main-nav ul li {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
+
   .hero h1 {
     font-size: 2.5rem;
   }
+
   .hero p {
     font-size: 1rem;
+  }
+
+  .section {
+    width: 100%;
+  }
+  
+  .about-content,
+  .education-content {
+    display: block;
+    text-align: center;
+  }
+
+  .about-content img,
+  .education-content img {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin: 1rem 0;
   }
 }
 
@@ -463,34 +475,27 @@ html {
 }
 
 /* Scroll to Top Button */
-#scroll-to-top {
+.scroll-to-top {
   display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: black;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-  opacity: 0.8;
+  cursor: pointer;
   z-index: 9999;
+  transition: opacity 0.3s ease;
 }
 
-#scroll-to-top:hover {
-  background-color: #2980b9;
-  opacity: 1;
-  transform: scale(1.1);
+.scroll-to-top img {
+  width: 30px; /* Adjust the width of the image as needed */
+  height: 30px; /* Adjust the height of the image as needed */
+  border-radius: 50%; /* Optional: Adds a circular border to the image */
 }
 
-#scroll-to-top svg {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
+.scroll-to-top:hover {
+  opacity: 0.8;
 }
+
+
 
 
 /* parallax effect */
@@ -505,4 +510,19 @@ html {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+/* CSS for fade-in animation */
+.animate-on-scroll {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

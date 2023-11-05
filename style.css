@@ -1,0 +1,508 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Top Bar */
+.top-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.top-bar .logo {
+  font-size: 1.8rem;
+}
+
+.top-bar .menu-btn {
+  display: none;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.top-bar .main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .main-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.top-bar .main-nav ul li {
+  margin-right: 1rem;
+}
+
+.top-bar .main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.top-bar .main-nav ul li a:hover {
+  background-color: #555;
+}
+
+/* Header */
+header.hero {
+  background-color: #3498db; /* A shade of blue */
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+header.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+header.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Social Links */
+.social-links {
+  margin-bottom: 1rem; /* Add space between LinkedIn link and "Contact Me" button */
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem 2rem; /* Adjust the padding here */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn-contact {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem 2rem; /* Adjust the padding here */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+header.hero a.btn-contact:hover {
+  background-color: #1f2c3a; /* An even darker shade of blue */
+}
+
+/* Scroll Down Indicator */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* Common styles for About Me and Education & Skills sections */
+.about-section,
+.education-skills-section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.about-section h2,
+.education-skills-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-content,
+.education-skills-section ul {
+    list-style: none;
+    padding-left: 1.2rem;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+
+.university-logo {
+    width: 500px; /* Adjust the width as needed */
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.education-skills-section {
+    text-align: center;
+}
+
+
+
+/* Projects and Extracurriculars Section */
+#projects,
+#extracurriculars {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+#projects h2,
+#extracurriculars h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#projects h3,
+#extracurriculars h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+#projects p,
+#extracurriculars p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+#projects .project-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#projects img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#extracurriculars .extracurricular-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#extracurriculars img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Contact Section */
+#contact {
+  background-color: #1abc9c;
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+#contact form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+#contact form textarea {
+  resize: vertical;
+}
+
+#contact form button {
+  background-color: #fff;
+  color: #1abc9c;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+  background-color: #f2f2f2;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer p {
+  font-size: 1.2rem;
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+}
+
+footer .social-icons a {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+footer .social-icons img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Image Styles */
+img {
+  width: 100%; /* Set a specific width */
+  max-width: 400px; /* Limit the maximum width to maintain aspect ratio */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .top-bar .menu-btn {
+    display: block;
+  }
+  .top-bar .main-nav {
+    display: none;
+  }
+  .top-bar .menu-btn.open {
+    transform: rotate(90deg);
+  }
+  .top-bar .main-nav.open {
+    display: block;
+  }
+  .top-bar .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .top-bar .main-nav ul li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Call-to-Action Button */
+.hero .btn-contact {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.hero .btn-contact:hover {
+  background-color: #1f2c3a;
+}
+
+/* Navigation Menu */
+.top-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .logo {
+  font-size: 1.8rem;
+}
+
+.top-bar .menu-btn {
+  display: none;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.top-bar .main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .main-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.top-bar .main-nav ul li {
+  margin-right: 1rem;
+}
+
+.top-bar .main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.top-bar .main-nav ul li a:hover {
+  background-color: #555;
+}
+
+/* Scroll Down Indicator */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+/* Call-to-Action Button */
+.btn-contact {
+  margin-top: 1rem;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #1f2c3a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll to Top Button */
+#scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  opacity: 0.8;
+  z-index: 9999;
+}
+
+#scroll-to-top:hover {
+  background-color: #2980b9;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#scroll-to-top svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+
+/* parallax effect */
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('path-to-your-image.jpg'); /* Replace with the actual image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

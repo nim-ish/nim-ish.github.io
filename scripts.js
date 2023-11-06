@@ -1,21 +1,21 @@
 // Function to check if an element is in the viewport
 function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }
 
 // Function to add fade-in class to elements in the viewport
 function addFadeInClass(elements) {
-  elements.forEach(element => {
-    if (isInViewport(element) && !element.classList.contains('fade-in')) {
-      element.classList.add('fade-in');
-    }
-  });
+    elements.forEach(element => {
+        if (isInViewport(element) && !element.classList.contains('fade-in')) {
+            element.classList.add('fade-in');
+        }
+    });
 }
 
 // Elements to animate on scroll
@@ -28,29 +28,82 @@ addFadeInClass([aboutMeSection, projectsSection, extracurricularsSection]);
 
 // Event listener for scroll to trigger animations
 window.addEventListener('scroll', () => {
-  addFadeInClass([aboutMeSection, projectsSection, extracurricularsSection]);
+    addFadeInClass([aboutMeSection, projectsSection, extracurricularsSection]);
 });
 
-// Scroll to top button
-const scrollBtn = document.getElementById("scroll-to-top");
+// Scroll to top button visibility logic
+const scrollToTopButton = document.getElementById("scroll-to-top");
 
-window.onscroll = function () {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollBtn.style.display = "block";
-  } else {
-    scrollBtn.style.display = "none";
-  }
-};
+window.addEventListener("scroll", () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+    } else {
+        scrollToTopButton.style.display = "none";
+    }
+});
+
+// Scroll to top functionality
+scrollToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
 
 scrollBtn.addEventListener("click", () => {
-  // Scroll to top smoothly
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    // Scroll to top smoothly
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
 // Parallax effect
 const parallaxBg = document.querySelector('.parallax-bg');
 
 window.addEventListener('scroll', () => {
-  let offset = window.pageYOffset;
-  parallaxBg.style.backgroundPositionY = offset * 0.7 + 'px';
+    let offset = window.pageYOffset;
+    parallaxBg.style.backgroundPositionY = offset * 0.7 + 'px';
 });
+
+// JavaScript to add 'animate-on-scroll' class to elements in viewport
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-on-scroll');
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+document.querySelectorAll('.animate-on-scroll').forEach(element => {
+    observer.observe(element);
+});
+
+
+// slide show
+let slideIndex = 0;
+
+function showSlides() {
+  const slides = document.getElementsByClassName("mySlides");
+  
+  // Increment slideIndex
+  slideIndex++;
+  
+  // Reset slideIndex if it exceeds the total number of slides
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  
+  // Set the transform property to move the slides horizontally
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.transform = `translateX(${(i - slideIndex) * 100}vw)`;
+  }
+  
+  setTimeout(showSlides, 3000); // Change slide every 3 seconds (3000 milliseconds)
+}
+
+showSlides(); // Call the function to start the slideshow
+
+

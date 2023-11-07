@@ -504,9 +504,9 @@ html {
 }
 
 .scroll-to-top img {
-    width: 10px;
+    width: 30px;
     /* Adjust the width of the image as needed */
-    height: 10px;
+    height: 30px;
     /* Adjust the height of the image as needed */
     border-radius: 50%;
     /* Optional: Adds a circular border to the image */
